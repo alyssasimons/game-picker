@@ -1,0 +1,131 @@
+import express from "express";
+import bodyParser from "body-parser";
+
+const app = express();
+const port = 3000;
+
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.post("/submit", (req, res) => {
+  const randomGame = games[Math.floor(Math.random() * games.length)];
+  res.render("index.ejs", {
+    videoGame: randomGame,
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
+const games = [
+  "Palworld",
+  "Counter-Strike 2",
+  "Dota 2",
+  "Baldur's Gate 3",
+  "Enshrouded",
+  "PUBG: BATTLEGROUNDS",
+  "Call of Duty®",
+  "Grand Theft Auto V",
+  "Team Fortress 2",
+  "Lethal Company",
+  "Apex Legends™",
+  "Rust",
+  "Football Manager 2024",
+  "War Thunder",
+  "Tom Clancy's Rainbow Six® Siege",
+  "Warframe",
+  "EA SPORTS FC™ 24",
+  "Unturned",
+  "DayZ",
+  "THE FINALS",
+  "ELDEN RING",
+  "Wallpaper Engine",
+  "Sid Meier’s Civilization® VI",
+  "Lost Ark",
+  "Monster Hunter: World",
+  "Stardew Valley",
+  "The Sims™ 4",
+  "TEKKEN 8",
+  "Path of Exile",
+  "Valheim",
+  "Destiny 2",
+  "Hearts of Iron IV",
+  "Cyberpunk 2077",
+  "Euro Truck Simulator 2",
+  "Red Dead Redemption 2",
+  "Farming Simulator 22",
+  "Project Zomboid",
+  "7 Days to Die",
+  "Dead by Daylight",
+  "Geometry Dash",
+  "Terraria",
+  "Rocket League®",
+  "FINAL FANTASY XIV Online",
+  "The Elder Scrolls V: Skyrim Special Edition",
+  "Like a Dragon: Infinite Wealth",
+  "Left 4 Dead 2",
+  "MIR4",
+  "Garry's Mod",
+  "tModLoader",
+  "PAYDAY 2",
+  "VRChat",
+  "ARK: Survival Evolved",
+  "Governor of Poker 3",
+  "Total War: WARHAMMER III",
+  "Age of Empires II: Definitive Edition",
+  "The Binding of Isaac: Rebirth",
+  "Sea of Thieves 2023 Edition",
+  "Europa Universalis IV",
+  "ARK: Survival Ascended",
+  "NARAKA: BLADEPOINT",
+  "Sid Meier's Civilization® V",
+  "Hunt: Showdown",
+  "SMITE®",
+  "RimWorld",
+  "Phasmophobia",
+  "Fallout 4",
+  "Black Desert",
+  "Mount & Blade II: Bannerlord",
+  "Overwatch® 2",
+  "Hogwarts Legacy",
+  "The Elder Scrolls® Online",
+  "Arma 3",
+  "Crusader Kings III",
+  "Brawlhalla",
+  "Factorio",
+  "New World",
+  "Soundpad",
+  "BeamNG.drive",
+  "Crab Game",
+  "Football Manager 2023",
+  "Satisfactory",
+  "The Witcher® 3: Wild Hunt",
+  "Deep Rock Galactic",
+  "Stellaris",
+  "Hell Let Loose",
+  "Assetto Corsa",
+  "Forza Horizon 5",
+  "Squad",
+  "Cookie Clicker",
+  "SCUM",
+  "Don't Starve Together",
+  "Yu-Gi-Oh! Master Duel",
+  "Bloons TD 6",
+  "Starfield",
+  "Conan Exiles",
+  "Age of Empires IV: Anniversary Edition",
+  "American Truck Simulator",
+  "Counter-Strike",
+  "Ready or Not",
+  "Valorant",
+  "League of Legends",
+  "Teamfight Tactics",
+  "Honkai: Star Rail",
+  "Genshin Impact",
+  "Fortnite",
+];

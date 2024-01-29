@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.videoGame) { %>
+  <h1> 
+    <%= videoGame %> 
+  </h1>
+  <% } else { %>
+      <h1> Don't know what game to play? </h1>
+      <h2> Click the button below to get a random video game suggestion! </h2>
+    <% } %>
+        <form action="/submit" method="POST">
+          <input type="submit" value="Get Video Game">
+        </form>
+
+          <%- include("partials/footer.ejs") %>
