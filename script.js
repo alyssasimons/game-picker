@@ -128,4 +128,6 @@ const games = [
   "Honkai: Star Rail",
   "Genshin Impact",
   "Fortnite",
+  "GTA V",
+  "Roblox",
 ];
