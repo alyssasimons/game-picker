@@ -6,7 +6,7 @@ The top 100 most played games on Steam (as of 1/28/2024) are included, as well a
 
 ## Installation
 
-Run this digital journal with a local server:
+Run this video game picker with a local server:
 
 1. Clone the repository to your local machine.
     ```bash
